@@ -2317,7 +2317,7 @@ textarea.input-field {
   }
 
   .header .btn {
-    margin-inline-start: 0;
+    margin-inline-start: auto;
   }
 
   /**
