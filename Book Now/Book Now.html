@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Room Reservation</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #000 0%, #0a0a23 100%);
+      overflow: hidden;
+    }
+
+    .wrapper {
+      position: relative;
+      width: 500px;
+      background: #000;
+      box-shadow: 0 0 50px #f6e9aa;
+      border-radius: 20px;
+      padding: 40px;
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+    }
+
+    h2 {
+      font-size: 30px;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 30px;
+      animation: slideDown 1s ease-in-out;
+    }
+
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .input-group {
+      position: relative;
+      margin: 25px 0;
+      border-bottom: 2px solid #fff;
+      animation: floatIn 1s ease forwards;
+      opacity: 0;
+    }
+
+    .input-group:nth-child(1) { animation-delay: 0.2s; }
+    .input-group:nth-child(2) { animation-delay: 0.3s; }
+    .input-group:nth-child(3) { animation-delay: 0.4s; }
+    .input-group:nth-child(4) { animation-delay: 0.5s; }
+    .input-group:nth-child(5) { animation-delay: 0.6s; }
+    .input-group:nth-child(6) { animation-delay: 0.7s; }
+    .input-group:nth-child(7) { animation-delay: 0.8s; }
+
+    @keyframes floatIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+    }
+
+    .input-group label {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: #fff;
+      pointer-events: none;
+      transition: .3s ease;
+    }
+
+    .input-group input,
+    .input-group select {
+      height: 40px;
+      width: 100%;
+      font-size: 16px;
+      color: #fff;
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 0 10px;
+      transition: all 0.3s ease;
+    }
+
+    .input-group input:focus,
+    .input-group select:focus {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .input-group input:focus ~ label,
+    .input-group input:valid ~ label,
+    .input-group select:focus ~ label,
+    .input-group select:valid ~ label {
+      top: -5px;
+      font-size: 12px;
+      color: rgb(200, 160, 115);
+    }
+
+    .input-group input[type="date"] {
+      color-scheme: dark;
+    }
+
+    .input-group select {
+      appearance: none;
+      background-color: transparent;
+      color: #f3f3f3;
+    }
+
+    .input-group select option {
+      background-color: #111;
+      color: rgb(184, 109, 23);
+    }
+
+    button {
+      width: 100%;
+      height: 40px;
+      background: rgb(212, 182, 131);
+      box-shadow: 0 0 15px rgb(255, 255, 255), 0 0 40px rgb(254, 230, 170) inset;
+      font-size: 16px;
+      font-weight: 600;
+      color: #000;
+      cursor: pointer;
+      border-radius: 30px;
+      outline: none;
+      border: none;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgb(209, 202, 173), 0 0 50px rgb(238, 232, 211) inset;
+    }
+
+    #successMessage {
+      display: none;
+      color: rgb(217, 206, 178);
+      text-align: center;
+      margin-top: 20px;
+      animation: pulse 1s ease infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    #roomPrice {
+      text-align: center;
+      color: rgb(248, 168, 116);
+      font-weight: bold;
+      margin-top: 10px;
+      transition: opacity 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h2>Book Your Room Now</h2>
+    <form>
+      <div class="input-group">
+        <input type="text" id="fullName" required />
+        <label for="fullName">Full Name</label>
+      </div>
+
+      <div class="input-group">
+        <input type="email" id="email" required />
+        <label for="email">Email Address</label>
+      </div>
+
+      <div class="input-group">
+        <input type="tel" id="phone" required />
+        <label for="phone">Phone Number</label>
+      </div>
+
+      <div class="input-group">
+        <input type="date" id="checkin" required />
+        <label for="checkin">Check-in Date</label>
+      </div>
+
+      <div class="input-group">
+        <input type="date" id="checkout" required />
+        <label for="checkout">Check-out Date</label>
+      </div>
+
+      <div class="input-group">
+        <select id="roomType" required>
+          <option value="" disabled selected hidden></option>
+          <option value="single">Single Room</option>
+          <option value="double">Double Room</option>
+          <option value="suite">Luxury Suite</option>
+          <option value="family">Family Room</option>
+          <option value="sea">Sea View Room</option>
+          <option value="penthouse">Royal Suite</option>
+        </select>
+        <label for="roomType">Room Type</label>
+      </div>
+
+      <div class="input-group">
+        <select id="payment" required>
+          <option value="" disabled selected hidden></option>
+          <option value="cash">Pay on Arrival</option>
+          <option value="card">Credit Card</option>
+          <option value="vodafone">Vodafone Cash</option>
+          <option value="online">Online Payment</option>
+        </select>
+        <label for="payment">Payment Method</label>
+      </div>
+
+      <div id="roomPrice"></div>
+
+      <button type="submit">Confirm Booking</button>
+      <div id="successMessage">✅ Your booking request has been successfully submitted! We will contact you soon.</div>
+    </form>
+  </div>
+
+  <script>
+    const roomType = document.getElementById("roomType");
+    const roomPrice = document.getElementById("roomPrice");
+    const prices = {
+      single: "EGP 500 / night",
+      double: "EGP 800 / night",
+      suite: "EGP 1200 / night",
+      family: "EGP 1500 / night",
+      sea: "EGP 1700 / night",
+      penthouse: "EGP 2500 / night"
+    };
+
+    roomType.addEventListener("change", function () {
+      const selected = roomType.value;
+      if (prices[selected]) {
+        roomPrice.style.opacity = 0;
+        setTimeout(() => {
+          roomPrice.textContent = "Price: " + prices[selected];
+          roomPrice.style.opacity = 1;
+        }, 200);
+      } else {
+        roomPrice.textContent = "";
+      }
+    });
+
+    document.querySelector("form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const successMsg = document.getElementById("successMessage");
+      successMsg.style.display = "block";
+      successMsg.style.animation = "pulse 1s ease infinite";
+    });
+  </script>
+</body>
+</html>

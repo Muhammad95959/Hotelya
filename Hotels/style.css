@@ -1,0 +1,311 @@
+/* الألوان الأساسية */
+:root {
+    --main-brown: #fec89e;
+    --dark-brown: #813c25;
+    --light-beige: #f7e8d5;
+    --dark-beige: #E3C6A7;
+    --white: #FFF8F0;
+    --gold: #C9A86A;
+}
+
+/* تنسيق عام */
+body {
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl;
+    text-align: right;
+    background-color: var(--light-beige);
+    color: var(--dark-brown);
+}
+
+/* الهيدر */
+.animated-header {
+    background-image: url('1.jpg'); /*  مسار الصورة */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-overlay {
+    background-color: rgba(0, 0, 0, 0.55);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.header-content {
+    text-align: center;
+    color: white;
+    animation: fadeSlideIn 1.8s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.header-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.header-subtitle {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* رسوم متحركة */
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 2.5rem;
+    }
+
+    .header-subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* وضع اللون الداكن */
+body {
+    background-color: #f5ead5;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+/* تنسيق الزرار بتاع تغيير الوضع من داكن لفاتح*/
+.dark-mode-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #ffffff;
+    color: rgb(250, 139, 70);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: slideInLeft 1.2s ease forwards;
+}
+
+.dark-mode-btn:hover {
+    background-color: #000000;
+}
+
+/* رسوم متحركة */
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* تنسيق الفنادق  */
+.hotel-header:hover {
+transform: scale(1.05);
+box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hotel-title {
+font-size: 2.5rem;
+font-weight: bold;
+transition: color 0.3s ease-in-out;
+}
+
+.hotel-title:hover {
+color: #E3C6A7;
+}
+
+.hotel-subtitle {
+font-size: 1.2rem;
+opacity: 0.9;
+transition: letter-spacing 0.3s ease-in-out;
+}
+
+.hotel-subtitle:hover {
+letter-spacing: 2px;
+}
+
+/* قوالب الفنادق */
+.hotel-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.hotel-card:hover {
+    transform: scale(1.05);
+}
+
+.hotel-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.hotel-body {
+    padding: 20px;
+}
+
+.hotel-body h4 {
+    color: var(--main-brown);
+    font-weight: bold;
+}
+
+.stars {
+    color: var(--gold);
+}
+
+/* الألوان و التنسيق للفنادق الاضافية*/
+:root {
+--gold: #86522a;
+--dark-brown: #86522a;
+--white: #86522a;
+--main-brown: #86522a;
+--dark-beige: #ffffff;
+}
+
+/* تنسيق عام للقوالب */
+.hotel-card {
+border: 4px solid rgb(220, 194, 167);
+border-radius: 10px;
+padding: 15px;
+text-align: center;
+background: #fff;
+transition: transform 0.3s ease-in-out;
+}
+
+.hotel-card:hover {
+transform: scale(1.05);
+}
+
+.hotel-img {
+width: 100%;
+height: 200px;
+object-fit: cover;
+border-radius: 10px;
+}
+
+.hotel-body h4 {
+margin-top: 10px;
+font-size: 18px;
+font-weight: bold;
+}
+
+.stars {
+color: rgb(153, 95, 1);
+font-size: 18px;
+}
+
+
+/*  تنسيق زر الحجز */
+.btn-book {
+display: block;
+margin-top: 10px;
+padding: 10px;
+background: var(--main-brown);
+color: white;
+text-decoration: none;
+border-radius: 5px;
+font-weight: bold;
+}
+
+.btn-book:hover {
+background: var(--dark-brown);
+color: var(--white);
+}
+
+/* الفنادق الفاخرة */
+.luxury {
+border: 3px solid var(--gold);
+}
+
+.luxury h4 {
+color: var(--gold);
+}
+
+.luxury .btn-book {
+background: var(--gold);
+color: var(--dark-brown);
+}
+
+/* تصميم بزاوية دائرية */
+.rounded-card {
+border-radius: 25px;
+}
+
+/* التصميم العصري */
+.modern {
+background: var(--dark-beige);
+color: white;
+}
+
+.modern .stars {
+color: var(--white);
+}
+
+.modern .btn-book {
+background: var(--white);
+color: var(--dark-beige);
+}
+
+/* تصميم بظل */
+.shadow-card {
+box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* تصميم بإطار متقطع */
+.dashed-border {
+border: 2px dashed var(--main-brown);
+}
+
+/* خلفية بلون بيج */
+.beige-background {
+background: var(--dark-beige);
+}
+
+.beige-background .btn-book {
+background: var(--dark-brown);
+}
+
+
+/* زر الحجز - النسخة المعدلة */
+.btn-book {
+    background: var(--main-brown); /* بني فاتح */
+    color: #FFF; /* النص أبيض */
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.btn-book:hover {
+    background: #000000; /* الزر يصبح أسود عند تمرير الماوس */
+    color: #FFF; /* النص يظل أبيض */
+}

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>List Of Hotels</title>
+
+    <!-- استدعاء Bootstrap و Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- تنسيق الصفحة -->
+</head>
+<body>
+
+<!--  قائمة الفنادق -->
+<button onclick="toggleDarkMode()" class="dark-mode-btn">Dark Mode</button>
+<header class="animated-header">
+    <div class="header-overlay">
+      <div class="header-content">
+        <h1 class="header-title">OUR HOTELS</h1>
+        <p class="header-subtitle">Enjoy a luxurious and comfortable stay in our top-rated hotels designed for your comfort and well-being</p>
+      </div>
+    </div>
+  </header>
+<!-- قائمة الفنادق -->
+<div class="container my-5">
+    <div class="row g-4">
+
+        <!-- فندق 5 نجوم -->
+        <div class="col-md-4">
+            <div class="hotel-card rounded-card">
+                <img src="img1.jpg" alt="فندق 5 نجوم" class="hotel-img">
+                <div class="hotel-body">
+                    <h4>Grand Lux Hotel</h4>
+                    <div class="stars">★★★★★</div>
+                    <a href="Book Now.html" class="btn-book">Book now</a>
+                </div>
+            </div>
+        </div>
+        <!-- فندق 4 نجوم -->
+        <div class="col-md-4">
+            <div class="hotel-card rounded-card">
+                <img src="img2.jpg" alt="فندق 5 نجوم" class="hotel-img">
+                <div class="hotel-body">
+                    <h4>Elite Palace Hotel</h4>
+                    <div class="stars">★★★★★</div>
+                    <a href="Book Now.html" class="btn-book">Book now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- فندق 3 نجوم -->
+        <div class="col-md-4">
+            <div class="hotel-card rounded-card">
+                <img src="img3.jpg" alt="فندق 5 نجوم" class="hotel-img">
+                <div class="hotel-body">
+                    <h4>Cozy Sinai Hotel</h4>
+                    <div class="stars">★★★★☆</div>
+                    <a href="Book Now.html" class="btn-book">Book now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- فندق اقتصادي -->
+        <div class="col-md-6">
+            <div class="hotel-card">
+                <img src="img4.jpg" alt="فندق اقتصادي" class="hotel-img">
+                <div class="hotel-body">
+                    <h4>Easy Suite Hotel</h4>
+                    <div class="stars">★★★☆☆</div>
+                    <a href="Book Now.html" class="btn-book">Book now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- فندق بوتيك -->
+        <div class="col-md-6">
+            <div class="hotel-card">
+                <img src="img5.jpg" alt="بوتيك هوتيل" class="hotel-img">
+                <div class="hotel-body">
+                    <h4>Bonk Family Hotel</h4>
+                    <div class="stars">★★★★☆</div>
+                    <a href="Book Now.html" class="btn-book">Book now</a>
+                </div>
+            </div>
+        </div>
+
+                <!-- 5 فنادق بتنسيق فاخر -->
+                <div class="col-md-4">
+                    <div class="hotel-card rounded-card">
+                        <img src="img6.jpg" alt="فندق 5 نجوم" class="hotel-img">
+                        <div class="hotel-body">
+                            <h4>Royal Palm Hotel</h4>
+                            <div class="stars">★★★★★</div>
+                            <a href="Book Now.html" class="btn-book">Book now</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="col-md-4">
+                    <div class="hotel-card rounded-card">
+                        <img src="img7.jpg" alt="فندق 5 نجوم" class="hotel-img">
+                        <div class="hotel-body">
+                            <h4>Elite Residence Hotel</h4>
+                            <div class="stars">★★★★☆</div>
+                            <a href="Book Now.html" class="btn-book">Book now</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="col-md-4">
+                    <div class="hotel-card rounded-card">
+                        <img src="img8.jpg" alt="فندق 5 نجوم" class="hotel-img">
+                        <div class="hotel-body">
+                            <h4>Modern Sinai Hotel</h4>
+                            <div class="stars">★★★☆☆</div>
+                            <a href="Book Now.html" class="btn-book">Book now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 5 فنادق بتنسيق اقتصادي -->
+                <div class="col-md-6">
+                    <div class="hotel-card beige-background">
+                        <img src="img9.jpg" alt="فندق اقتصادي" class="hotel-img">
+                        <div class="hotel-body">
+                            <h4>Express Inn Hotel</h4>
+                            <div class="stars">★★★☆☆</div>
+                            <a href="Book Now.html" class="btn-book">Book now</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="col-md-6">
+                    <div class="hotel-card beige-background">
+                        <img src="img10.jpg" alt="فندق بسيط" class="hotel-img">
+                        <div class="hotel-body">
+                            <h4>Relax Inn Hotel</h4>
+                            <div class="stars">★★★☆☆</div>
+                            <a href="Book Now.html" class="btn-book">Book now</a>
+                        </div>
+                    </div>
+                </div>
+
+         <!-- فندق 5 نجوم -->
+         <div class="col-md-4">
+            <div class="hotel-card rounded-card">
+                <img src="img11.jpg" alt="فندق 5 نجوم" class="hotel-img">
+                <div class="hotel-body">
+                    <h4>Traveller Inn Hotel</h4>
+                    <div class="stars">★★★★★</div>
+                    <a href="Book Now.html" class="btn-book">Book now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- فندق 4 نجوم -->
+        <div class="col-md-4">
+            <div class="hotel-card rounded-card">
+                <img src="img12.jpg" alt="فندق 5 نجوم" class="hotel-img">
+                <div class="hotel-body">
+                    <h4>Smart Stai Hotel</h4>
+                    <div class="stars">★★★☆☆</div>
+                    <a href="Book Now.html" class="btn-book">Book now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- فندق 3 نجوم -->
+        <div class="col-md-4">
+            <div class="hotel-card rounded-card">
+                <img src="img13.jpg" alt="فندق 5 نجوم" class="hotel-img">
+                <div class="hotel-body">
+                    <h4>Marina View Hotel</h4>
+                    <div class="stars">★★★★☆</div>
+                    <a href="Book Now.html" class="btn-book">Book now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- فندق اقتصادي -->
+        <div class="col-md-6">
+            <div class="hotel-card">
+                <img src="img14.jpg" alt="فندق اقتصادي" class="hotel-img">
+                <div class="hotel-body">
+                    <h4>Grand Ocean Hotel</h4>
+                    <div class="stars">★★☆☆☆</div>
+                    <a href="Book Now.html" class="btn-book">Book now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- فندق بوتيك -->
+        <div class="col-md-6">
+            <div class="hotel-card">
+                <img src="img15.jpg" alt="بوتيك هوتيل" class="hotel-img">
+                <div class="hotel-body">
+                    <h4>Royal Plaza Hotel</h4>
+                    <div class="stars">★★☆☆☆</div>
+                    <a href="Book Now.html" class="btn-book">Book now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script> 
+</body>
+</html>

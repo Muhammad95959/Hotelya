@@ -1,0 +1,210 @@
+:root {
+    --main-color: #976f41;
+    --light-bg: #fff8f0;
+    --dark-bg: #020202;
+    --text-light: #333;
+    --text-dark: #f0f0f0;
+}
+
+body.light-mode {
+    background-color: var(--light-bg);
+    color: var(--text-light);
+}
+
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--text-dark);
+}
+
+.toggle-mode {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    border: none;
+}
+
+.toggle-mode:hover {
+    background-color: #6e502f;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+}
+
+.header-bg {
+    background-image: url('img.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(1.1);
+    animation: zoomIn 10s ease-in-out infinite;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.header h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 5px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.header p {
+    font-size: 1.25rem;
+    margin-top: 10px;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.service-card {
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover img {
+    transform: scale(1.1);
+}
+
+.service-card .service-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.service-card h5 {
+    font-size: 1.6rem;
+    color: var(--main-color);
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.service-card .btn {
+    background-color: var(--main-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.service-card .btn:hover {
+    background-color: #6e502f;
+    transform: scale(1.1);
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: var(--main-color);
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .service-card h5 {
+        font-size: 1.4rem;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+    }
+
+    .service-card .btn {
+        font-size: 1rem;
+    }
+}
